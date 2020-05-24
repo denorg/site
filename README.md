@@ -1,36 +1,40 @@
-# 🏁 Deno Starter
+# 🌍 Deno Site
 
-This is a starter template for building Deno packages, with GitHub Actions CI, tests,and a CLI.
+The first JAMStack static site generator written in Deno, for building fast, beautiful, and accessible documentation sites.
 
-[![Test CI](https://github.com/denorg/starter/workflows/Test%20CI/badge.svg)](https://github.com/denorg/starter/actions)
+**⚠️ WARNING:** This project is currently in alpha-stage development. Expect breaking changes.
 
-```ts
-import { mode } from "https://raw.githubusercontent.com/denorg/starter/master/mod.ts";
-
-const result = mode();
-```
-
-Alternatively, you can use it directly from the CLI by using deno run:
+[![Test CI](https://github.com/denorg/site/workflows/Test%20CI/badge.svg)](https://github.com/denorg/site/actions)
 
 ```bash
-deno run --allow-read https://raw.githubusercontent.com/denorg/starter/master/cli.ts <arguments>
+deno run --allow-read --allow-write --allow-net https://raw.githubusercontent.com/denorg/site/master/cli.ts <arguments>
+```
+
+Alternatively, you can use the API:
+
+```ts
+import { build } from "https://raw.githubusercontent.com/denorg/site/master/mod.ts";
+
+const siteResult = await build();
 ```
 
 You can also install it globally using the following:
 
 ```bash
-deno install --allow-read -n starter https://raw.githubusercontent.com/denorg/starter/master/cli.ts
+deno install --allow-read --allow-write --allow-net -n site https://raw.githubusercontent.com/denorg/site/master/cli.ts
 ```
 
 Then, the package is available to run:
 
 ```bash
-starter <arguments>
+site <arguments>
 ```
 
 Required permissions:
 
 1. `--allow-read`
+1. `--allow-write`
+1. `--allow-net`
 
 ## 👩‍💻 Development
 
@@ -39,6 +43,10 @@ Run tests:
 ```bash
 deno test --allow-read
 ```
+
+## ⭐ Related
+
+- [staart/site](https://github.com/staart/site) is the inspiration for this project
 
 ## 📄 License
 
